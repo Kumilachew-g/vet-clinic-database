@@ -72,6 +72,12 @@ SELECT name, weight_kg FROM animals;
  
   SELECT COUNT(*) from animals WHERE escape_attempts =0;
   
-  /*-- calculate the average weght of all animals --*/
+  /*-- Calculate the average weight of all animals --*/
   
   SELECT AVG(weight_kg) from animals;
+  
+ /*-- Find the max escape attemps ,neutered or not neutered animals --*/
+ SELECT neutered, 
+  MAX(escape_attempts) AS max_escap_attempts
+   FROM animals 
+   GROUP BY neutered;
