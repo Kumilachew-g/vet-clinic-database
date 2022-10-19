@@ -50,17 +50,16 @@ BEGIN;
 DELETE FROM animals WHERE date_of_birth >='01/01/2022';
 SELECT name, date_of_birth FROM animals;
 
-/* --Create savepoint --*/
-
+--create savepoint 
 SAVEPOINT sp1;
 UPDATE animals SET weight_kg =weight_kg * -1;
 SELECT name, weight_kg FROM animals;
-ROLLBACK TO sp1;
-SELECT name, weight_kg FROM animals; -- Check the effect after rollback
+ ROLLBACK TO sp1;
+ SELECT name, weight_kg FROM animals; -- Check the result after rollback
 
  UPDATE animals SET weight_kg =weight_kg * -1
- WHERE weight_kg < 0;
+   WHERE weight_kg < 0;
  SELECT name, weight_kg 
- FROM animals;  --check the chande made
+   FROM animals;  --Check the change made
  COMMIT;
 
