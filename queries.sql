@@ -50,7 +50,7 @@ BEGIN;
 DELETE FROM animals WHERE date_of_birth >='01/01/2022';
 SELECT name, date_of_birth FROM animals;
 
---create savepoint 
+--Create savepoint 
 SAVEPOINT sp1;
 UPDATE animals SET weight_kg =weight_kg * -1;
 SELECT name, weight_kg FROM animals;
@@ -93,5 +93,13 @@ SELECT MIN(weight_kg) FROM animals;
 
 /*-- Calculate the average escape attemps of animals born between 1990 and 2000 --*/
 
-SELECT AVG(escape_attempts) FROM animals WHERE
-date_of_birth BETWEEN '01/01/1990' AND '01/01/2000'
+-- SELECT AVG(escape_attempts) FROM animals WHERE
+-- date_of_birth BETWEEN '01/01/1990' AND '01/01/2000'
+
+SELECT species, 
+AVG(escape_attempts)
+FROM animals 
+Where date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
+GROUP BY species;
+
+
