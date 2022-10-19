@@ -63,3 +63,7 @@ SELECT name, weight_kg FROM animals;
    FROM animals;  --Check the change made
  COMMIT;
 
+/*-- Aggreigate --*/
+ /*-- How many animals are there --*/
+ 
+ SELECT COUNT(*) from animals;
