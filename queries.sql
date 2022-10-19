@@ -85,11 +85,17 @@ SELECT name, weight_kg FROM animals;
    
 /*-- Find the max weight of animals --*/
  
-SELECT MAX(weight_kg) FROM animals;
+-- SELECT MAX(weight_kg) FROM animals;
 
 /*-- Find the min weight of animals --*/
 
-SELECT MIN(weight_kg) FROM animals;
+-- SELECT MIN(weight_kg) FROM animals;
+
+SELECT species, 
+MAX(weight_kg) AS "Max Weight", 
+MIN(weight_kg) AS "Min Weight" 
+FROM animals 
+GROUP BY species;
 
 /*-- Calculate the average escape attemps of animals born between 1990 and 2000 --*/
 
