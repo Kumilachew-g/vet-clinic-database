@@ -71,3 +71,7 @@ SELECT name, weight_kg FROM animals;
  /*-- Count animals never tried to escape --*/
  
   SELECT COUNT(*) from animals WHERE escape_attempts =0;
+  
+  /*-- calculate the average weght of all animals --*/
+  
+  SELECT AVG(weight_kg) from animals;
