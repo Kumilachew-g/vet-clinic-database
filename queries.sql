@@ -86,3 +86,7 @@ SELECT name, weight_kg FROM animals;
 /*-- Find the max weight of animals --*/
  
 SELECT MAX(weight_kg) FROM animals;
+
+/*-- Find the min weight of animals --*/
+
+SELECT MIN(weight_kg) FROM animals;
