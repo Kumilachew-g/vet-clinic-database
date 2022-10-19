@@ -43,3 +43,4 @@ ROLLBACK;
 SELECT COUNT(*) FROM animals; 
 
 /*-- Delete all animals data inside transaction and undo deletion end --*/
+
