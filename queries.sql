@@ -77,7 +77,12 @@ SELECT name, weight_kg FROM animals;
   SELECT AVG(weight_kg) from animals;
   
  /*-- Find the max escape attemps ,neutered or not neutered animals --*/
+ 
  SELECT neutered, 
   MAX(escape_attempts) AS max_escap_attempts
    FROM animals 
    GROUP BY neutered;
+   
+/*-- Find the max weight of animals --*/
+ 
+SELECT MAX(weight_kg) FROM animals;
