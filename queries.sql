@@ -32,10 +32,12 @@ SELECT name,species from animals; --verify update
 COMMIT;
 SELECT name,species from animals; --verify update made after commit
 
-/*-- Delete all animals data inside transaction and undo deletion ---*/
+/*-- Delete all animals data inside transaction and undo deletion --*/
 BEGIN;
 DELETE FROM animals;
 SELECT COUNT(*) FROM animals; --check the count of animals 
 SELECT * FROM animals; -- check after deletion
 ROLLBACK;
-/*---Delete all animals data inside transaction and undo deletion end--*/
+
+/*-- Check the count of animals after Rollback --*/
+SELECT COUNT(*) FROM animals; 
