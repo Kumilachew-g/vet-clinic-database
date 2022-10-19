@@ -90,3 +90,8 @@ SELECT MAX(weight_kg) FROM animals;
 /*-- Find the min weight of animals --*/
 
 SELECT MIN(weight_kg) FROM animals;
+
+/*-- Calculate the average escape attemps of animals born between 1990 and 2000 --*/
+
+SELECT AVG(escape_attempts) FROM animals WHERE
+date_of_birth BETWEEN '01/01/1990' AND '01/01/2000'
