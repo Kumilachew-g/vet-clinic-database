@@ -67,3 +67,7 @@ SELECT name, weight_kg FROM animals;
  /*-- How many animals are there --*/
  
  SELECT COUNT(*) from animals;
+ 
+ /*-- Count animals never tried to escape --*/
+ 
+  SELECT COUNT(*) from animals WHERE escape_attempts =0;
