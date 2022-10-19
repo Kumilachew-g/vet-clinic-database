@@ -41,3 +41,5 @@ ROLLBACK;
 
 /*-- Check the count of animals after Rollback --*/
 SELECT COUNT(*) FROM animals; 
+
+/*-- Delete all animals data inside transaction and undo deletion end --*/
