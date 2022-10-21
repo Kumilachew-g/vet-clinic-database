@@ -195,6 +195,6 @@ BETWEEN '2020-04-01' AND '2020-08-30';
 
 /**-- What animal has the most visits to vets? --*/
 
-SELECT animals.name, COUNT(*) as visits 
+SELECT animals.name, COUNT(*) AS "Visits" 
 FROM visits JOIN animals ON visits.animal_id = animals.id 
-GROUP BY animals.name ORDER BY visits DESC;
+GROUP BY animals.name ORDER BY "Visits" DESC;
