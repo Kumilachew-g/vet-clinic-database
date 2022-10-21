@@ -57,3 +57,31 @@ CREATE TABLE vets (
 );
   
 
+/*-- Add "join table" for visits --*/
+/**-- Create vets table --*/
+
+CREATE TABLE vets (
+	id INT NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	name VARCHAR(255),
+	age INT,
+	date_of_graduation DATE
+);
+
+
+/*-- Create a "join table" called specializations to handle this relationship --*/
+
+CREATE TABLE specializations (
+     vet_id INT, species_id INT,
+     CONSTRAINT pk_specializations PRIMARY KEY(vet_id,species_id),
+     CONSTRAINT fk_vets FOREIGN KEY(vet_id) REFERENCES vets(id),
+     CONSTRAINT fk_species FOREIGN KEY(species_id) REFERENCES species(id)
+);
+
+/*-- Create a "join table" called visits to handle this relationship --*/
+
+CREATE TABLE visits (
+    animal_id INT, vet_id INT,
+    date_of_visit DATE,
+    CONSTRAINT fk_animals FOREIGN KEY(animal_id) REFERENCES animals(id),
+    CONSTRAINT fk_vets FOREIGN KEY(vet_id) REFERENCES vets(id)
+);
