@@ -178,3 +178,9 @@ ORDER BY date_of_visit DESC LIMIT 1;
 SELECT vet.name AS "Vet Name", COUNT(DISTINCT animal_id)FROM
 vets vet JOIN visits visit on vet.id =visit.vet_id 
 WHERE vet.name ='Stephanie Mendez' GROUP BY vet.name;
+
+/*-- List all vets and their specialties, including vets with no specialties --*/
+
+SELECT vet.name AS "Vet Name" ,s.name As "Specialization" FROM vets vet LEFT JOIN 
+specializations spec ON vet.id =spec.vet_id LEFT JOIN species s 
+ON  s.id =spec.species_id;
