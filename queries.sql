@@ -163,3 +163,12 @@ INNER JOIN owners
 ON animals.owner_id = owners.id
 GROUP BY owners.full_name
 ORDER BY COUNT(animals.id) DESC LIMIT 1;
+
+/*-- Many-to-many relationships and write more complex queries --*/
+
+/*-- Who was the last animal seen by William Tatcher? --*/
+
+SELECT a.name As "Animal Name", vet.name As "Vet Name", visit.date_of_visit 
+FROM animals a JOIN visits visit on a.id =visit.animal_id
+JOIN vets vet ON vet.id =visit.vet_id WHERE vet.name ='William Tatcher'
+ORDER BY date_of_visit DESC LIMIT 1;
