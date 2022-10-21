@@ -81,5 +81,15 @@ UPDATE animals SET owner_id = 5 WHERE name = 'Angemon' OR name = 'Boarmon';
 
 /*-- End of query multiple tables --*/
  
+/*-- Many-to-many relationships --*/
+ 
+/**- Insert the following data into vets table --*/
+
+INSERT INTO vets (name,age,date_of_graduation)
+    VALUES
+	      ('William Tatcher',45,'04-23-2000'),
+	      ('Maisy Smith',26,'01-17-2019'),
+	      ('Stephanie Mendez',64,'04-05-1981'),
+		  ('Jack Harkness',38,'08-06-2008');
  
 
