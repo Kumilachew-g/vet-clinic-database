@@ -45,4 +45,15 @@ ALTER TABLE animals ADD species_id INT,
 
 ALTER TABLE animals ADD owner_id INT, 
   ADD CONSTRAINT fk_owners FOREIGN KEY(owner_id) REFERENCES owners(id);
+  
+/*-- Add "join table" for visits --*/
+/**-- Create vets table --*/
+
+CREATE TABLE vets (
+	id INT NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	name VARCHAR(255),
+	age INT,
+	date_of_graduation DATE
+);
+  
 
