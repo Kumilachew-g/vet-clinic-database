@@ -172,3 +172,9 @@ SELECT a.name As "Animal Name", vet.name As "Vet Name", visit.date_of_visit
 FROM animals a JOIN visits visit on a.id =visit.animal_id
 JOIN vets vet ON vet.id =visit.vet_id WHERE vet.name ='William Tatcher'
 ORDER BY date_of_visit DESC LIMIT 1;
+
+/**-- How many different animals did Stephanie Mendez see? --*/
+
+SELECT vet.name AS "Vet Name", COUNT(DISTINCT animal_id)FROM
+vets vet JOIN visits visit on vet.id =visit.vet_id 
+WHERE vet.name ='Stephanie Mendez' GROUP BY vet.name;
