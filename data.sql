@@ -92,4 +92,7 @@ INSERT INTO vets (name,age,date_of_graduation)
 	      ('Stephanie Mendez',64,'04-05-1981'),
 		  ('Jack Harkness',38,'08-06-2008');
  
+/*-- Insert the following data for specialties --*/
 
+INSERT INTO specializations(vet_id,species_id)
+VALUES (1,1),(3,1),(3,2),(4,2);
