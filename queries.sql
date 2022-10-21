@@ -221,3 +221,11 @@ LEFT JOIN specializations ON visits.vet_id = specializations.vet_id
 JOIN animals ON visits.animal_id = animals.id
 WHERE specializations.species_id <> animals.species_id 
 OR specializations.species_id IS NULL;
+
+/*-- What specialty should Maisy Smith consider getting? Look for the species she gets the most --*/
+
+SELECT animal_id, animals.species_id, species.name as speciality 
+FROM visits JOIN animals ON visits.animal_id = animals.id 
+JOIN species ON animals.species_id = species.id 
+JOIN vets ON visits.vet_id = vets.id
+WHERE vets.name = 'Maisy Smith';
