@@ -206,3 +206,10 @@ FROM visits JOIN animals ON visits.animal_id = animals.id
 JOIN vets ON visits.vet_id = vets.id
 WHERE vets.name = 'Maisy Smith' 
 ORDER by  "Date of Visist" ASC LIMIT 1;
+
+/*-- Details for most recent visit: animal information, vet information, and date of visit --*/
+
+SELECT animals.name AS "Animal", vets.name AS "Doctor", date_of_visit AS "Date of Visit"
+FROM animals JOIN visits ON animals.id = visits.animal_id 
+JOIN vets ON visits.vet_id = vets.id 
+ORDER BY date_of_visit DESC LIMIT 1;
