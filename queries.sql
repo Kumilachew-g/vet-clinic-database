@@ -198,3 +198,11 @@ BETWEEN '2020-04-01' AND '2020-08-30';
 SELECT animals.name, COUNT(*) AS "Visits" 
 FROM visits JOIN animals ON visits.animal_id = animals.id 
 GROUP BY animals.name ORDER BY "Visits" DESC;
+
+/*-- Who was Maisy Smith's first visit --*/
+
+SELECT animal_id AS "Animal ID", animals.name AS "Animal Name", visits.date_of_visit AS "Date of Visist", vets.name 
+FROM visits JOIN animals ON visits.animal_id = animals.id 
+JOIN vets ON visits.vet_id = vets.id
+WHERE vets.name = 'Maisy Smith' 
+ORDER by  "Date of Visist" ASC LIMIT 1;
