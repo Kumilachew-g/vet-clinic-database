@@ -57,17 +57,6 @@ CREATE TABLE vets (
 );
   
 
-/*-- Add "join table" for visits --*/
-/**-- Create vets table --*/
-
-CREATE TABLE vets (
-	id INT NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-	name VARCHAR(255),
-	age INT,
-	date_of_graduation DATE
-);
-
-
 /*-- Create a "join table" called specializations to handle this relationship --*/
 
 CREATE TABLE specializations (
