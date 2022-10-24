@@ -77,6 +77,5 @@ CREATE TABLE visits (
 
 /*-- Database Performance Audit --*/
 
+-- Add email column
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
-
--- 
