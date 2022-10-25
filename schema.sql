@@ -77,3 +77,6 @@ CREATE TABLE visits (
 
 -- Add an email column to your owners table
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+-- Create  index to minimaze performance issue 
+	CREATE INDEX  visit_animal_id_index  ON visits(animal_id);
