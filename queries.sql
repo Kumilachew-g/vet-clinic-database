@@ -229,3 +229,7 @@ FROM visits JOIN animals ON visits.animal_id = animals.id
 JOIN species ON animals.species_id = species.id 
 JOIN vets ON visits.vet_id = vets.id
 WHERE vets.name = 'Maisy Smith';
+
+/* Analize before creating index table*/
+
+   EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
