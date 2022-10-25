@@ -231,5 +231,8 @@ JOIN vets ON visits.vet_id = vets.id
 WHERE vets.name = 'Maisy Smith';
 
 /* Analize before creating index table*/
-
+-- Analyze animals_id
    EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
+-- Analyze vets_id
+   EXPLAIN ANALYZE   SELECT COUNT(*) FROM visits where vet_id = 2;
+   
