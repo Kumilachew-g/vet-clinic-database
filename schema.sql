@@ -75,6 +75,12 @@ CREATE TABLE visits (
     CONSTRAINT fk_vets FOREIGN KEY(vet_id) REFERENCES vets(id)
 );
 
+<<<<<<< HEAD
+/*-- Database Performance Audit --*/
+
+-- Add email column
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+=======
 -- Add an email column to your owners table
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 
@@ -84,3 +90,4 @@ ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 	CREATE INDEX visit_vet_id_index ON visits(vet_id)
 
 	CREATE INDEX owner_email_index ON owners(email)
+>>>>>>> 60eb26aa38001f4029154505da0f89502564d33b
