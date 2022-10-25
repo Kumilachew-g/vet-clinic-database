@@ -230,6 +230,7 @@ JOIN species ON animals.species_id = species.id
 JOIN vets ON visits.vet_id = vets.id
 WHERE vets.name = 'Maisy Smith';
 
+<<<<<<< HEAD
 -- Analize before Add index
 -- Analyze animal_id
 EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
@@ -238,3 +239,14 @@ EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
 SELECT * FROM visits where vet_id = 2;
 
 
+=======
+/* Analize before creating index table*/
+
+-- Analyze animals_id
+   EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
+-- Analyze vets_id
+   EXPLAIN ANALYZE   SELECT COUNT(*) FROM visits where vet_id = 2;
+-- Analyze email
+   EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
+   
+>>>>>>> 60eb26aa38001f4029154505da0f89502564d33b
