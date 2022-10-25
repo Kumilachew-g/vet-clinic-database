@@ -139,4 +139,3 @@ SELECT * FROM (SELECT id FROM animals) animal_ids,
 INSERT INTO owners (full_name, email) 
   SELECT 'Owner ' || generate_series(1,2500000),
   'owner_' || generate_series(1,2500000) || '@mail.com';
->>>>>>> 60eb26aa38001f4029154505da0f89502564d33b
